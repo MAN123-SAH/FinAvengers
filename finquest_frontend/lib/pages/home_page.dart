@@ -3,7 +3,7 @@ import 'package:flutter_jwt/services/auth_service.dart';
 import 'package:flutter_jwt/services/transaction_service.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -78,9 +78,9 @@ class _HomePageState extends State<HomePage> {
           showDialog(
             context: context,
             builder: (context) {
-              final _amountController = TextEditingController();
-              final _categoryController = TextEditingController();
-              final _modeController = TextEditingController();
+              final amountController = TextEditingController();
+              final categoryController = TextEditingController();
+              final modeController = TextEditingController();
 
               return AlertDialog(
                 title: const Text('Add Transaction'),
@@ -88,15 +88,15 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     TextField(
-                      controller: _amountController,
+                      controller: amountController,
                       decoration: const InputDecoration(labelText: 'Amount'),
                     ),
                     TextField(
-                      controller: _categoryController,
+                      controller: categoryController,
                       decoration: const InputDecoration(labelText: 'Category'),
                     ),
                     TextField(
-                      controller: _modeController,
+                      controller: modeController,
                       decoration: const InputDecoration(labelText: 'Mode'),
                     ),
                   ],
@@ -112,9 +112,9 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () async {
                       final transactionData = {
                         'amount':
-                            double.tryParse(_amountController.text) ?? 0.0,
-                        'category': _categoryController.text,
-                        'mode': _modeController.text,
+                            double.tryParse(amountController.text) ?? 0.0,
+                        'category': categoryController.text,
+                        'mode': modeController.text,
                       };
                       await _addTransaction(transactionData);
                     },

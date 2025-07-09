@@ -26,7 +26,7 @@ Future<void> _signup(
 }
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  const SignUpPage({super.key});
 
   @override
   _SignUpPageState createState() => _SignUpPageState();

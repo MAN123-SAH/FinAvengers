@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import './sign_in_page.dart';
 
+// Design this splash page.
+
 class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key}) : super(key: key);
+  const SplashPage({super.key});
 
   @override
   Widget build(BuildContext context) {
